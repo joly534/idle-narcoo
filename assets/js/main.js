@@ -1,22 +1,9 @@
 
 
-var popul = document.getElementById('nombre-de-personne');
-var nbrBucheron = document.getElementById('nbr-bucheron');
-var quantBois = document.getElementById('nombre-de-bois');
-
-/** LA POPULATION AUGMENTE TOUTES LES 30 SECONDES */
-function Population() {
-    setInterval(function() {
-        valeurPopulation +=1;
-        popul.innerHTML = valeurPopulation;
-    }, 30000)
-}
-
-
-
-
 /**BOUTON D'OUVERTURE DU MENU */
-function openMenu() {
+function openMenu() 
+{
+    /**on recupere les éléments */
     var ctrlPanel = document.getElementById('control-panel');
     var btnOpenMenu = document.getElementById('button-menu');
     var btnCloseMenu = document.getElementById('close-menu');
@@ -27,7 +14,9 @@ function openMenu() {
     btnCloseMenu.style.display='inline';
 } 
 /**BOUTON DE FERMETURE DU MENU */
-function closeMenu() {
+function closeMenu() 
+{
+    /**on recupere les éléments */
     var ctrlPanel = document.getElementById('control-panel');
     var btnOpenMenu = document.getElementById('button-menu');
     var btnCloseMenu = document.getElementById('close-menu');
@@ -39,14 +28,19 @@ function closeMenu() {
 } 
 
 
-function main() {
+function main() 
+{
+    /**on envoie la musique */
     var ambiant = new Audio('../assets/sound/Mer-KA-Ba.mp3');
     ambiant.play();
-    popul.innerHTML = valeurPopulation;
+
+    /**on lance la population */
     Population();
-    var grid = new Grid(1024,0,500,500,200,200,125,125);
-    grid.draw();
-    var monster = new Pnj(0,0,512,512,300,300,125,125);
-    monster.draw()
+
+    /**on dessinne le sol */
+    var floor = new Floor(0,0,500,500,800,100,128,128);
+    floor.draw();
+    
 }
+
 main();

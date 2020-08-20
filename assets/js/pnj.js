@@ -4,7 +4,24 @@ var valeurBucheron = 0;
 var valeurPopulation = 2;
 
 
-valeurBois= 0;
+
+
+var popul = document.getElementById('nombre-de-personne');
+var nbrBucheron = document.getElementById('nbr-bucheron');
+var quantBois = document.getElementById('nombre-de-bois');
+
+/** LA POPULATION AUGMENTE TOUTES LES 30 SECONDES */
+function Population() 
+{    
+    popul.innerHTML = valeurPopulation;
+    setInterval(function() 
+    {
+        valeurPopulation +=1;
+        popul.innerHTML = valeurPopulation;
+
+    }, 30000)
+}
+
 
 function Bucheron(img,oX,oY,oWidth,oHeight,x,y,width,height) {
     this.x = x;

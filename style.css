@@ -1,32 +1,60 @@
-/******************GENERAL******************/
-*{
+/*GENERAL*/
+*
+{
     margin: 0;
     padding: 0;
+    box-sizing: content-box; 
     font-family: 'Iceland', cursive;
 }
-body{
+
+body
+{
     font-size: 1.3rem;
 }
 
-#main{
+.flex-row
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-col
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-col img
+{
+    margin: 10px auto;
+}
+
+/*PRINCIPAL*/
+#main
+{
     width: 100vw;
     height: 100vh;
 }
-canvas{
+/*CANVAS*/
+canvas
+{
     width: 100%;
     height: 100%;
     position: absolute;
     z-index: 99;
 }
-
-#button-menu{
+/*BOUTONS DU MENU*/
+#button-menu
+{
     z-index: 999;
     position: absolute;
     left: 0;
     width: 4em;
     height: 4em;
 }
-#close-menu{
+
+#close-menu
+{
     z-index: 999;
     display: none;
     position: absolute;
@@ -35,7 +63,9 @@ canvas{
     height: 4em;
 }
 
-#control-panel{
+/*CONSOLE DE COMMANDE DU JEU*/
+#control-panel
+{
     z-index: 998;
     width: 30%;
     padding: 15px;
@@ -46,43 +76,46 @@ canvas{
     transition: 0.5s;
 }
 
-.flex-row{
-    display: flex;
-    flex-direction: row;
-}
-.flex-col{
-    display: flex;
-    flex-direction: column;
-}
-#ressources{
+/*INDICATEUR RESSOURCES*/
+#ressources
+{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 
-.bouton-ressource{
+.bouton-ressource
+{
     border: 1px outset black;
     width: 3em;
 }
 
-.bouton-ressource img{
+.bouton-ressource img
+{
     width: 32px;
     height: 32px;
 }
-#management{
+
+/*CONTROLE RESSOURCES*/
+#management
+{
     display: flex;
 }
-.management{
+
+.management
+{
     width: 150px;
     border: 2px outset black;
     margin: 1em 0;
 }
 
-.management:hover{
+.management:hover
+{
     border-color: red;
 }
 
-.barre-progression{
+.barre-progression
+{
     background-color: silver;
     border-radius: 10px;
     width: 90%;
@@ -91,7 +124,8 @@ canvas{
     overflow: hidden;
 }
 
-.barre-progression div{
+.barre-progression div
+{
     width: 0%;
     background-color: #ffd700;
 }
