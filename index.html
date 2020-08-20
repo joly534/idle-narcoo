@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idle Corona</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Iceland&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="main">
+        
+        <canvas id="map"></canvas> 
+        <canvas id="pnj"></canvas>
+
+        <!---------------BOUTON DU MENU-------------->
+        <button id="button-menu" onclick="openMenu()">
+            <img id="menu" src="assets/pictures/icones/menu.png" alt="">
+            <span id="txt-menu">menu</span>
+        </button>
+        <button id="close-menu" onclick="closeMenu()">
+            <img id="close" src="assets/pictures/icones/return.png" alt="">
+            <span id="txt-close">fermer</span>
+        </button>
+        
+        <!--------------------CONSOLE DE COMMANDE DU JEU-------------------->
+        <div id="control-panel">
+
+            <!--------------------TITRE DU JEU-------------------->
+            <h1>IDLE TOWN</h1>
+
+            <!--------------------INDICATEUR RESSOURCES-------------------->
+            <div id="ressources" class="flex-row">
+
+                <!--------------------POPULATION-------------------->
+                <div id="population" class="bouton-ressource flex-col">
+                    <img src="assets/pictures/icones/person.png" alt="">
+                    <span id="nombre-de-personne">0</span>
+                </div>
+                <!--------------------BOIS-------------------->
+                <div id="bois" class="bouton-ressource flex-col">
+                    <img src="assets/pictures/icones/wood.png" alt="">
+                    <span id="nombre-de-bois">0</span>
+                </div>
+                <!--------------------EAU-------------------->
+                <div id="eau" class="bouton-ressource flex-col">
+                    <img src="assets/pictures/icones/water.png" alt="">
+                    <span id="nombre-de-eau">0</span>
+                </div>
+                <!--------------------NOURRITURE-------------------->
+                <div id="nourriture" class="bouton-ressource flex-col">
+                    <img src="assets/pictures/icones/food.png" alt="">
+                    <span id="nombre-de-nourriture">0</span>
+                </div>
+                <!--------------------PIERRE-------------------->
+                <div id="pierre" class="bouton-ressource flex-col">
+                    <img src="assets/pictures/icones/stone.png" alt="">
+                    <span id="nombre-de-pierre">0</span>
+                </div>
+                <!--------------------MONNAIE-------------------->
+                <div id="Monnaie" class="bouton-ressource flex-col">
+                    <img src="assets/pictures/icones/coin.png" alt="">
+                    <span id="nombre-de-piece">0</span>
+                </div>
+            </div>  
+            
+            <!--------------------CONTROLE RESSOURCES-------------------->
+            <div id="management">
+
+                <!--------------------BUCHERON-------------------->
+                <div id="bucheron" class="management">
+                    <div>
+                        <span>Bucheron : </span>
+                        <span id="nbr-bucheron"></span>
+                    </div>
+                    <img src="../assets/pictures/pnj/wood-cutter.png" alt="">
+                    <div class="barre-progression">
+                        <div id="progression-bucheron">d</div>
+                    </div>
+                    <button onclick="embaucherBucheron()"class="btn-management">EMBAUCHER</button>
+                </div>
+
+                <!--------------------MINEUR-------------------->
+                <div id="mineur" class="management">
+                    <div>
+                        <span>Mineur : </span>
+                        <span id="nbr-miner"></span>
+                    </div>
+                    <img src="../assets/pictures/pnj/miner.png" alt="">
+                    <div class="barre-progression">
+                        <div id="progression-miner">d</div>
+                    </div>
+                    <button onclick="embaucherMineur()"class="btn-management">EMBAUCHER</button>
+                </div>
+                <!--------------------PUISATIER-------------------->
+                <div id="puisatier" class="management">
+                    <div>
+                        <span>Puisatier : </span>
+                        <span id="nbr-puisatier"></span>
+                    </div>
+                    <img src="../assets/pictures/pnj/water.png" alt="">
+                    <div class="barre-progression">
+                        <div id="progression-puisatier">d</div>
+                    </div>
+                    <button onclick="embaucherPuisatier()"class="btn-management">EMBAUCHER</button>
+                </div>
+
+            </div>
+        </div>  
+        
+    </div>
+    
+</div>
+<script src="assets/js/pnj.js"></script>
+<script src="assets/js/walker.js"></script>
+    <script src="assets/js/grid.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
