@@ -3,51 +3,37 @@ var ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-var tableau = [];
+var frameWorldX = [0,500,1000,1500,2000,2500];
+var world = [];
 
-function Tile(sx,sy,swidth,sheight,dx,dy,dwidth,dheight) {
+
+function drawTile(sximg,dx,dy,dwidth,dheight) {
     var img = new Image();
-    img.src ='../assets/pictures/world/grass.png';
-    this.sx = sx;
-    this.sy = sy;
-    this.swidth = swidth;
-    this.sheight = sheight;
-    this.dx = dx;
-    this.dy = dy;
-    this.dwidth = dwidth;
-    this.dheight = dheight;
-    
-    this.draw = function() {
-        img.onload = function() {
-            ctx.drawImage(img,sx,sy,swidth,sheight,dx,dy,dwidth,dheight);
-        };
-    };
-
+    img.src = '../assets/pictures/world/grass.png';
+    img.onload = function() {
+        ctx.drawImage(img,sximg,0,500,500,dx,dy,dwidth,dheight);
+    }
 }
 
-/**CREATION DU PLATEAU DE JEU */
-function Floor(sx,sy,swidth,sheight,dx,dy,dwidth,dheight){
-    this.sx = sx;
-    this.sy = sy;
-    this.swidth = swidth;
-    this.sheight = sheight;
-    this.dx = dx;
-    this.dy = dy;
-    this.dwidth = dwidth;
-    this.dheight = dheight;
-    this.draw = function() {
-        
-        for (var i=0;i<15;i++) {
-            var decalX = 46;
-            var decalY = 23;
-            for (var j=0;j<10;j++) {
-                var tile = new Tile(sx,sy,swidth,sheight,dx,dy,dwidth,dheight);
-                tile.draw();            
-                dx += 44;
-                dy += 22
-            };
-            dx = 800 - (decalX * i);
-            dy = 100 + (decalY * i);
+function drawFloor() {
+    var dx = 700;
+    var dy = 0;
+    var dwidth = 128;
+    var dheight = 128;
+    var decalX = 46;
+    var decalY = 23;
+    /***dix lignes */
+    for (var i=0 ; i<15 ; i++) {
+        /**dix colonnes */
+        for (var j=0 ; j<15; j++) {
+            /**selection aleatoire de la coordonnée x dans spritsheet grass.png */
+            var sximg = frameWorldX[Math.floor(Math.random()* 6)];
+            drawTile(sximg,dx,dy,dwidth,dheight);
+            dx += 46;
+            dy += 23
+            world.push(j);    
         };
-    };
+        dx = 700 - decalX * (i + 1);
+        dy = 0 + decalY * (i+1)
+    }
 }

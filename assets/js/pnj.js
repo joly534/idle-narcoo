@@ -23,20 +23,23 @@ function Population()
 }
 
 
-function Bucheron(img,oX,oY,oWidth,oHeight,x,y,width,height) {
-    this.x = x;
-    this.y = y;
-    this.oX = oX;
-    this.oY = oY;
-    this.oWidth = oWidth;
-    this.oHeight = oHeight;
-    this.width = width;
-    this.height = height;
+function Bucheron(sx,sy,swidth,sheight,dx,dy,dwidth,dheight) {
+    var image = new Image();
+    image.src = '../assets/pictures/pnj/monster.png';
+    this.sx = sx;
+    this.sy = sy;
+    this.swidth = swidth;
+    this.sheight = sheight;
+    this.dx = dx;
+    this.dy = dy;
+    this.dwidth = dwidth;
+    this.dheight = dheight;
     this.draw = function() {
-        var img = new Image();
-        img.src = '';
-        ctx.drawImage(img,oX,oY,oWidth,oHeight,x,y,width,height);
-    }
+        image.onload = function() {
+            ctx.drawImage(image,sx,sy,swidth,sheight,dx,dy,dwidth,dheight);
+        };
+    };
+
     this.coupe = function() {
         valeurDeProgression = 0;
         var scie = new Audio('../assets/sound/scie.wav');

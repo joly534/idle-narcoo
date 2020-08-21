@@ -13,6 +13,7 @@ function openMenu()
     btnOpenMenu.style.display='none';
     btnCloseMenu.style.display='inline';
 } 
+
 /**BOUTON DE FERMETURE DU MENU */
 function closeMenu() 
 {
@@ -30,6 +31,7 @@ function closeMenu()
 
 function main() 
 {
+    
     /**on envoie la musique */
     var ambiant = new Audio('../assets/sound/Mer-KA-Ba.mp3');
     ambiant.play();
@@ -38,9 +40,7 @@ function main()
     Population();
 
     /**on dessinne le sol */
-    var floor = new Floor(0,0,500,500,800,100,128,128);
-    floor.draw();
-    
+    drawFloor();
 }
 
 main();
