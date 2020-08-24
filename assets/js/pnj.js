@@ -23,20 +23,16 @@ function Population()
 }
 
 
-function Bucheron(sx,sy,swidth,sheight,dx,dy,dwidth,dheight) {
+function Bucheron(dx,dy,dwidth,dheight) {
     var image = new Image();
     image.src = '../assets/pictures/pnj/monster.png';
-    this.sx = sx;
-    this.sy = sy;
-    this.swidth = swidth;
-    this.sheight = sheight;
     this.dx = dx;
     this.dy = dy;
     this.dwidth = dwidth;
     this.dheight = dheight;
     this.draw = function() {
         image.onload = function() {
-            ctx.drawImage(image,sx,sy,swidth,sheight,dx,dy,dwidth,dheight);
+            ctx.drawImage(image,0,0,64,64,dx,dy,dwidth,dheight);
         };
     };
 
@@ -59,24 +55,18 @@ function Bucheron(sx,sy,swidth,sheight,dx,dy,dwidth,dheight) {
             progBuche.innerHTML ="";
             progBuche.innerHTML = valeurDeProgression + '%';
         },150);
-    }
+    };
 }
 
 
 
 /**EMBAUCHER UN BUCHERON */
 function embaucherBucheron() {
-    var img = new Image ();
-    img.src='assets/pictures/pnj/sprite_wood_cutter.png';
     if (valeurPopulation > 0) {
-        var buck = new Bucheron(img,0,0,160,160,400,400,32,32);
-        buck.zIndex = 99999;
         valeurBucheron +=1;
         nbrBucheron.innerHTML= valeurBucheron;
         valeurPopulation = valeurPopulation-1;
         popul.innerHTML = valeurPopulation;
-        buck.draw();
-        buck.coupe();
     }
     else {
         console.log('pas possible');

@@ -43,24 +43,30 @@ canvas
     position: absolute;
     z-index: 99;
 }
-/*BOUTONS DU MENU*/
-#button-menu
-{
+/*BOUTONS*/
+
+.btn{
+    
     z-index: 999;
     position: absolute;
-    left: 0;
     width: 4em;
     height: 4em;
 }
-
-#close-menu
+.btn img{
+    width: 60%;
+}
+#button-menu, #close-menu
 {
-    z-index: 999;
-    display: none;
-    position: absolute;
     left: 0;
-    width: 4em;
-    height: 4em;
+}
+
+#btn-sound-on, #btn-sound-off {
+    right: 0;
+}
+
+#close-menu, #btn-sound-on
+{
+    display: none;
 }
 
 /*CONSOLE DE COMMANDE DU JEU*/

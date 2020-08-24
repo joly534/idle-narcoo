@@ -15,13 +15,23 @@
         <canvas id="map"></canvas> 
 
         <!---------------BOUTON DU MENU-------------->
-        <button id="button-menu" onclick="openMenu()">
-            <img id="menu" src="assets/pictures/icones/menu.png" alt="">
+        <button id="button-menu" class="btn" onclick="openMenu()">
+            <img id="menu" src="assets/pictures/icones/menu.png" alt="icone d'ouverture de menu">
             <span id="txt-menu">menu</span>
         </button>
-        <button id="close-menu" onclick="closeMenu()">
-            <img id="close" src="assets/pictures/icones/return.png" alt="">
+        <button id="close-menu" class="btn" onclick="closeMenu()">
+            <img id="close" src="assets/pictures/icones/return.png" alt="icone de fermeture de menu">
             <span id="txt-close">fermer</span>
+        </button>
+
+        <!---------------BOUTON DU SON-------------->
+        <button id="btn-sound-on" class="btn" onclick="soundOn()">
+            <img id="sound" src="assets/pictures/icones/soundon.png" alt="icone de lecture du son">
+            <span id="txt-sound-on">jouer</span>
+        </button>
+        <button id="btn-sound-off" class="btn" onclick="soundOff()">
+            <img id="mute" src="assets/pictures/icones/soundoff.png" alt="icone d'arret de lecture du son">
+            <span id="txt-sound-off">mute</span>
         </button>
         
         <!--------------------CONSOLE DE COMMANDE DU JEU-------------------->
@@ -74,7 +84,7 @@
                         <span>Bucheron : </span>
                         <span id="nbr-bucheron"></span>
                     </div>
-                    <img src="../assets/pictures/pnj/wood-cutter.png" alt="">
+                    <img src="assets/pictures/pnj/wood-cutter.png" alt="">
                     <div class="barre-progression">
                         <div id="progression-bucheron">d</div>
                     </div>
@@ -87,7 +97,7 @@
                         <span>Mineur : </span>
                         <span id="nbr-miner"></span>
                     </div>
-                    <img src="../assets/pictures/pnj/miner.png" alt="">
+                    <img src="assets/pictures/pnj/miner.png" alt="">
                     <div class="barre-progression">
                         <div id="progression-miner">d</div>
                     </div>
@@ -99,21 +109,21 @@
                         <span>Puisatier : </span>
                         <span id="nbr-puisatier"></span>
                     </div>
-                    <img src="../assets/pictures/pnj/water.png" alt="">
+                    <img src="assets/pictures/pnj/water.png" alt="">
                     <div class="barre-progression">
                         <div id="progression-puisatier">d</div>
                     </div>
                     <button onclick="embaucherPuisatier()"class="btn-management">EMBAUCHER</button>
                 </div>
-
             </div>
-        </div>  
-        
+        </div>          
     </div>
+
     
-</div>
+    </div>
+    <audio id="music" src="assets/sound/Mer-KA-Ba.mp3"></audio>
+    <script src="assets/js/sound.js"></script>
     <script src="assets/js/pnj.js"></script>
-    <script src="assets/js/walker.js"></script>
     <script src="assets/js/grid.js"></script>
     <script src="assets/js/main.js"></script>
 </body>

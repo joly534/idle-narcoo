@@ -18,10 +18,10 @@ function drawTile(sximg,dx,dy,dwidth,dheight) {
 function drawFloor() {
     var dx = 700;
     var dy = 0;
-    var dwidth = 128;
-    var dheight = 128;
-    var decalX = 46;
-    var decalY = 23;
+    var dwidth = 208;
+    var dheight = 120;
+    var decalX = 76;
+    var decalY = 22;
     /***dix lignes */
     for (var i=0 ; i<15 ; i++) {
         /**dix colonnes */
@@ -29,11 +29,13 @@ function drawFloor() {
             /**selection aleatoire de la coordonnée x dans spritsheet grass.png */
             var sximg = frameWorldX[Math.floor(Math.random()* 6)];
             drawTile(sximg,dx,dy,dwidth,dheight);
-            dx += 46;
-            dy += 23
+            dx += 76;
+            dy += 22;
             world.push(j);    
         };
         dx = 700 - decalX * (i + 1);
         dy = 0 + decalY * (i+1)
     }
+    var bucheron = new Bucheron(700,0,64,64);
+    bucheron.draw();
 }

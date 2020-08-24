@@ -32,15 +32,15 @@ function closeMenu()
 function main() 
 {
     
-    /**on envoie la musique */
-    var ambiant = new Audio('../assets/sound/Mer-KA-Ba.mp3');
-    ambiant.play();
+    
 
     /**on lance la population */
     Population();
 
     /**on dessinne le sol */
     drawFloor();
+
+    playMusic();
 }
 
 main();
