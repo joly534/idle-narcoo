@@ -40,7 +40,7 @@ function main()
     /**on dessinne le sol */
     drawFloor();
 
-    playMusic();
+    // playMusic();
 }
 
 main();
