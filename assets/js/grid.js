@@ -12,6 +12,7 @@ function drawTile(sximg,dx,dy,dwidth,dheight) {
     img.src = '../assets/pictures/world/grass.png';
     img.onload = function() {
         ctx.drawImage(img,sximg,0,500,500,dx,dy,dwidth,dheight);
+
     }
 }
 
@@ -22,9 +23,9 @@ function drawFloor() {
     var dheight = 120;
     var decalX = 76;
     var decalY = 22;
-    /***dix lignes */
+    /***quinze lignes */
     for (var i=0 ; i<15 ; i++) {
-        /**dix colonnes */
+        /**quinze colonnes */
         for (var j=0 ; j<15; j++) {
             /**selection aleatoire de la coordonnée x dans spritsheet grass.png */
             var sximg = frameWorldX[Math.floor(Math.random()* 6)];
@@ -36,6 +37,4 @@ function drawFloor() {
         dx = 700 - decalX * (i + 1);
         dy = 0 + decalY * (i+1)
     }
-    var bucheron = new Bucheron(700,0,64,64);
-    bucheron.draw();
 }

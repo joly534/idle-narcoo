@@ -12,7 +12,7 @@ function soundOff() {
     btnOff.style.display='none';
     btnOn.style.display='inline';
 }
-var music = document.getElementById('music');
+var music = new Audio('assets/sound/Mer-Ka-Ba.mp3');
 
 function playMusic() 
 {

@@ -18,9 +18,9 @@ function Population()
     {
         valeurPopulation +=1;
         popul.innerHTML = valeurPopulation;
+    }, 30000)}
+/*************************************************/
 
-    }, 30000)
-}
 
 
 function Bucheron(dx,dy,dwidth,dheight) {
